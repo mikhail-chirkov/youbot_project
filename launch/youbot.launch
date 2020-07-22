@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot" default="youbot"/>
+  <arg name="world" default="project_world"/>
+  <arg name="init_pos_x" default="0.0"/>
+  <arg name="init_pos_y" default="-0.1"/>
+  <arg name="init_pos_z" default="0.1"/>
+  <arg name="init_yaw" default="1.5708"/>
+  <!-- launch world -->
+  <include file="$(find youbot_project)/launch/$(arg world).launch" />
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find youbot_description)/robots/$(arg robot).urdf.xacro" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_robot" respawn="false" output="screen"
+    args="-param robot_description
+          -urdf
+          -x $(arg init_pos_x)
+          -y $(arg init_pos_y)
+          -z $(arg init_pos_z)
+          -Y $(arg init_yaw)
+          -model youbot">
+  </node>
+
+  <!-- launch joint state controller -->
+  <include file="$(find youbot_gazebo_control)/launch/joint_state_controller.launch" />
+
+  <!-- launch base controller -->
+  <include file="$(find youbot_gazebo_control)/launch/base_controller.launch" />
+
+  <!-- launch arm controller -->
+  <include file="$(find youbot_gazebo_control)/launch/arm_controller.launch" />
+  
+  <!-- launch gripper controller -->
+  <include file="$(find youbot_gazebo_control)/launch/gripper_controller.launch" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="100.0" />
+  </node>
+
+  <include file="$(find youbot_moveit)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="false"/>
+    <arg name="info" value="true"/>
+  </include>  
+ 
+  <include file="$(find youbot_navigation_global)/launch/2dslam.launch">
+    
+  </include>
+ 
+
+  <include file="$(find youbot_navigation_local)/launch/move_base_local.launch">
+    
+  </include>
+
+</launch>

@@ -3,7 +3,7 @@ Youbot MoveIt! project, based on gazebo simulation of youbot and generated movei
 
 Video with demonstration: https://youtu.be/Sb7gXdOLEjI
 
-To install add to catkin_ws and compile packages:
+To install add to catkin_ws and compile these packages:
 
 [youbot_description](https://github.com/mikhail-chirkov/youbot_description)
 

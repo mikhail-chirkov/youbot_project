@@ -14,6 +14,7 @@ To install add to catkin_ws and compile these packages:
 [youbot_simulation](https://github.com/mikhail-chirkov/youbot_simulation)
 
 Also [Grasp fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin) and [Gazebo link attacher](https://github.com/pal-robotics/gazebo_ros_link_attacher) need to  be installed.
+In order to launch this particular simulation scenario [model_editor_models]https://github.com/mikhail-chirkov/model_editor_models folder should be added in home(/~) folder and sourced in gasebo as a model database.
 
 To launch the simulation scenario use:
 

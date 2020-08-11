@@ -2,7 +2,7 @@
 
 Demonstration: https://youtu.be/Sb7gXdOLEjI
 
-This is Youbot and MoveIt! project, based on ROS and gazebo simulation. Robot is able to perform pick&place movements by using MoveIt!. There also a SLAM functionality impemented.
+This is Youbot and MoveIt! project, based on ROS and gazebo simulation. Robot is able to plan and execute pick&place movements by using MoveIt!. There also a SLAM functionality impemented.
 
 To fix some problems with gazebo physics [Grasp fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin) and [Gazebo link attacher](https://github.com/pal-robotics/gazebo_ros_link_attacher) are used. Tested ONLY for ROS Kinetic.
 

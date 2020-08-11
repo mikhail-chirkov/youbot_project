@@ -1,7 +1,10 @@
 # youbot_project
-Youbot MoveIt! project, based on gazebo simulation of youbot and generated moveit package. To fix some problems with gazebo physics [Grasp fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin) and [Gazebo link attacher](https://github.com/pal-robotics/gazebo_ros_link_attacher) are used. Tested ONLY for ROS Kinetic.
 
-Video with demonstration: https://youtu.be/Sb7gXdOLEjI
+Demonstration: https://youtu.be/Sb7gXdOLEjI
+
+This is Youbot and MoveIt! project, based on gazebo simulation. Robot is able to perform pick&place movements by using MoveIt!. There also a SLAM functionality impemented.
+
+To fix some problems with gazebo physics [Grasp fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin) and [Gazebo link attacher](https://github.com/pal-robotics/gazebo_ros_link_attacher) are used. Tested ONLY for ROS Kinetic.
 
 To install add to catkin_ws and compile these packages:
 
